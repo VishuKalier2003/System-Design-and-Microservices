@@ -3,7 +3,7 @@ import java.io.PrintWriter;
 
 public class Blazer extends Clothes {
     public Blazer(String fabric, String brand, String color, boolean uniform) {
-        super(fabric);
+        super(fabric);      // property called from parent class
         this.brand = brand;
         this.color = color;
         this.uniform = uniform;

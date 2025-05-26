@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 public class Hoodie extends Clothes {
 
     public Hoodie(String fabric, String brand, String color, boolean cap) {
-        super(fabric);
+        super(fabric);      // property called from parent class
         this.brand = brand;
         this.color = color;
         this.cap = cap;

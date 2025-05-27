@@ -1,3 +1,5 @@
+package Singleton;
+
 // Info: Singleton pattern where a class will have one and only one instance for a program
 public class Singleton {
     

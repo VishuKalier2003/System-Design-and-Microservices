@@ -1,3 +1,5 @@
+package Singleton;
+
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.Date;

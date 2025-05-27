@@ -1,3 +1,4 @@
+package Singleton;
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;

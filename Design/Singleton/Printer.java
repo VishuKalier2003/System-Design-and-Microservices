@@ -20,7 +20,7 @@ public class Printer {
     }
 
     public void dashLine() {
-        output.append("----------------------------");
+        output.append("----------------------------").append("\n");
         writer.write(output.toString());
         writer.flush();
         output.delete(0, output.length());

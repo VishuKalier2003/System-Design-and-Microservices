@@ -10,5 +10,7 @@ public class Test {
         SingletonWriter.getInstance().printLine(syrupedCoffee.makeCoffee());
         Coffee sugarCoffee = new CoffeeSugar(new CoffeeDecorator(new BaseCoffee()));
         SingletonWriter.getInstance().printLine(sugarCoffee.makeCoffee());
+        Coffee doubleSugar = new CoffeeSugar(new CoffeeSugar(new CoffeeDecorator(coffee)));
+        SingletonWriter.getInstance().printLine(doubleSugar.makeCoffee());
     }
 }

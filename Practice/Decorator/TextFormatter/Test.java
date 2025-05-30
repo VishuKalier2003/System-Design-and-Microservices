@@ -11,7 +11,6 @@ public class Test {
         HtmlText dec1 = new HtmlText(new TextDecorator(obj1));
         MarkdownText dec2 = new MarkdownText(new TextDecorator(obj1));
         MarkdownText layered = new MarkdownText(new HtmlText(new TextDecorator(obj1)));
-        HtmlText layered2 = new HtmlText(new HtmlText(new TextDecorator(obj1)));
         try (Scanner sc = new Scanner(System.in)) {
             String input = sc.nextLine();
             SingletonWriter.getInstance().printLine("Base Class Formatting : " + obj1.formatText(input));

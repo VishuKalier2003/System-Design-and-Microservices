@@ -2,6 +2,7 @@ package Partitioning.KeyValueHashing;
 
 import Singleton.SingletonWriter;
 
+// Extending abstract class to add additional features
 public class Slot<V> extends Data<V> {
     private final int size, slotIndex;
     private int index;
@@ -15,7 +16,7 @@ public class Slot<V> extends Data<V> {
         this.loadRatio = (this.index + 0.0d) / this.size;
     }
 
-    @Override
+    @Override       // Function overriding of the abstract method
     public void showData() {
         SingletonWriter.getInstance().printLine("Slot Index : "+slotIndex);
         for(V v : this.getValue())
@@ -24,6 +25,7 @@ public class Slot<V> extends Data<V> {
         SingletonWriter.getInstance().printLine("Slot Load Ratio : "+loadRatio);
     }
 
+    // Getters and Setters
     public void setLoadRatio(double lr) {this.loadRatio = lr; setIndex((int)lr);}
     public void setIndex(int x) {this.index = x;}
 

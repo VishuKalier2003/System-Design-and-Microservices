@@ -2,6 +2,7 @@ package Partitioning.KeyValueHashing;
 
 import java.util.Scanner;
 
+// Test class for unit testing of features of Paritioning
 public class Test {
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {

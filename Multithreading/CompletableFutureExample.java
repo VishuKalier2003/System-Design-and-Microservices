@@ -27,7 +27,7 @@ public class CompletableFutureExample {
         completableFuture.complete("Hello");
 
         // Attach a callback to the CompletableFuture.
-        completableFuture.thenAccept(s -> System.out.println("Received: " + s));
+        completableFuture.thenAccept(s -> System.out.println("Received: "+s));
 
         // Create a CompletableFuture that runs a task and returns a value.
         CompletableFuture<Integer> futureWithResult = CompletableFuture.supplyAsync(() -> {

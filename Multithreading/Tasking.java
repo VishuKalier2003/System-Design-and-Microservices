@@ -21,9 +21,9 @@ public class Tasking {
             Thread.sleep(1500);
             return taskID;
         };
-        FutureTask<Integer> f = new FutureTask<>(task);
-        es.submit(f);
-        return f.get();
+        FutureTask<Integer> f = new FutureTask<>(task);     // binds the callable object with the future task
+        es.submit(f);       // Executing the task
+        return f.get();     // Returning the output as the return type of the callable
     }
 
     public static Integer executeRunnable(int taskID) throws Exception {

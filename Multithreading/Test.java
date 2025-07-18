@@ -12,6 +12,7 @@ public class Test {
         CompletableFuture<Void> allDone = CompletableFuture.allOf(s, c, r);
         // Then using the thenApply for mapping values
         CompletableFuture<Double> total = allDone.thenApply(_ -> s.join() + c.join() + r.join());
+        // join is used as a final operation
         System.out.println("Total: " + total.join());
     }
 }

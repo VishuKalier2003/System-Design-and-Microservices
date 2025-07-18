@@ -1,20 +1,30 @@
-import java.util.Arrays;
+
+import java.lang.reflect.Field;
+
+
 
 public enum Pipe implements Handler {
     @Meta(packet="transfering...", packetID=1)
     TRANSFER {
         @Override
-        public Pipe operateAndTransfer(String... data) {
+        public Pipe operateAndTransfer(String... data) throws NoSuchFieldException {
+            Field f = Pipe.class.getField(this.name());
+            Meta meta = f.getAnnotation(Meta.class);
             if(data.length < 2)
                 return ERROR;
-            System.out.println("Annotations : "+Arrays.toString(this.getClass().getAnnotations()));
-            return TRANSFER;
+            System.out.println(meta.packet());
+            return END;
         }
     },
     @Meta(packet="checking balance...", packetID=12)
     CHECK {
         @Override
-        public Pipe operateAndTransfer(String... data) {
+        public Pipe operateAndTransfer(String... data) throws NoSuchFieldException {
+            Field f = Pipe.class.getField(this.name());
+            Meta meta = f.getAnnotation(Meta.class);
+            if(data.length < 2)
+                return ERROR;
+            System.out.println(meta.packet());
             return TRANSFER;
         }
     },
@@ -30,6 +40,14 @@ public enum Pipe implements Handler {
         @Override
         public Pipe operateAndTransfer(String... data) throws Exception {
             throw new Exception();
+        }
+    },
+    @Meta(packet="Pipe Completed", packetID=200)
+    END {
+        @Override
+        public Pipe operateAndTransfer(String... data) {
+            System.out.println("Packet Delivered !!");
+            return null;
         }
     }
 }
